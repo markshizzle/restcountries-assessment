@@ -33,3 +33,19 @@ This Java application uses the [REST Countries API](https://restcountries.com) t
    ```bash
    git clone https://github.com/markshizzle/restcountries-assessment.git
    cd restcountries-assessment
+   mvn compile exec:java -Dexec.mainClass="com.markshizzle.restcountries.RestCountriesApplication"
+
+---
+
+## Example Output
+
+```plaintext
+Top 10 population density:
+Monaco                         density: 26337.04 people/km²
+Macau                          density: 21539.50 people/km²
+Singapore                      density: 8358.94 people/km²
+...
+
+Asian country with most non-Asian neighbours:
+Turkey (2 non-Asian borders)
+
