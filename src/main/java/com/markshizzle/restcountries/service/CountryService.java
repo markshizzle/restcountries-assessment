@@ -13,7 +13,7 @@ import java.util.List;
 public class CountryService {
 
     private static final String API_URL =
-            "https://restcountries.com/v3.1/all?fields=name,region,subregion,area,population,borders,cca3";
+            "https://restcountries.com/v3.1/all?fields=name,region,area,population,borders,cca3";
 
     private final HttpClient httpClient = HttpClient.newHttpClient();
     private final ObjectMapper objectMapper = new ObjectMapper();
