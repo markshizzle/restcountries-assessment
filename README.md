@@ -28,8 +28,6 @@ This Java application uses the [REST Countries API](https://restcountries.com) t
 ---
 
 ## Running the Application
-
-1. Clone the repository
    ```bash
    git clone https://github.com/markshizzle/restcountries-assessment.git
    cd restcountries-assessment
