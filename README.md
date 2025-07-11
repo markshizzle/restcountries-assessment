@@ -32,6 +32,7 @@ This Java application uses the [REST Countries API](https://restcountries.com) t
    git clone https://github.com/markshizzle/restcountries-assessment.git
    cd restcountries-assessment
    mvn compile exec:java -Dexec.mainClass="com.markshizzle.restcountries.RestCountriesApplication"
+   ```
 
 ---
 
@@ -46,4 +47,5 @@ Singapore                      density: 8358.94 people/km²
 
 Asian country with most non-Asian neighbours:
 Turkey (2 non-Asian borders)
+```
 
