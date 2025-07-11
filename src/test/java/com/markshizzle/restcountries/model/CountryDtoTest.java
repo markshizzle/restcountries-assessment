@@ -4,23 +4,35 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CountryDtoTest {
+/**
+ * Unit tests for CountryDto methods.
+ */
+class CountryDtoTest {
 
     @Test
-    public void testPopulationDensityCalculation() {
-        CountryDto c = new CountryDto();
-        c.population = 1000000;
-        c.area = 500.0;
+    void testGetPopulationDensity_valid() {
+        CountryDto dto = new CountryDto();
+        dto.setArea(100.0);
+        dto.setPopulation(1000);
 
-        assertEquals(2000.0, c.getPopulationDensity(), 0.001);
+        assertEquals(10.0, dto.getPopulationDensity(), 0.01);
     }
 
     @Test
-    public void testPopulationDensityWhenAreaIsZero() {
-        CountryDto c = new CountryDto();
-        c.population = 1000000;
-        c.area = 0;
+    void testGetPopulationDensity_zeroArea() {
+        CountryDto dto = new CountryDto();
+        dto.setArea(0.0);
+        dto.setPopulation(1000);
 
-        assertEquals(0.0, c.getPopulationDensity());
+        assertEquals(0.0, dto.getPopulationDensity(), 0.01);
+    }
+
+    @Test
+    void testGetPopulationDensity_negativeArea() {
+        CountryDto dto = new CountryDto();
+        dto.setArea(-5.0);
+        dto.setPopulation(1000);
+
+        assertEquals(0.0, dto.getPopulationDensity(), 0.01);
     }
 }

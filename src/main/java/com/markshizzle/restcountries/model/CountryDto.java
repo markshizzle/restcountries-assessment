@@ -2,39 +2,52 @@ package com.markshizzle.restcountries.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+/**
+ * Data Transfer Object representing a country as returned by the REST Countries API.
+ */
+@Data
+@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CountryDto {
 
     @JsonProperty("name")
-    public Name name;
+    private Name name;
 
     @JsonProperty("region")
-    public String region;
+    private String region;
 
     @JsonProperty("population")
-    public long population;
+    private long population;
 
     @JsonProperty("area")
-    public double area;
+    private double area;
 
     @JsonProperty("borders")
-    public String[] borders;
+    private String[] borders;
 
     @JsonProperty("cca3")
-    public String cca3;
+    private String cca3;
 
-    public CountryDto() {}
+    /**
+     * Calculates the population density based on population and area.
+     *
+     * @return population density, or 0 if area is 0 or less
+     */
+    public double getPopulationDensity() {
+        return area > 0 ? population / area : 0;
+    }
 
+    /**
+     * Inner class representing the nested 'name' object.
+     */
+    @Data
+    @NoArgsConstructor
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Name {
         @JsonProperty("common")
-        public String common;
-
-        public Name() {}
-    }
-
-    public double getPopulationDensity() {
-        return area > 0 ? population / area : 0;
+        private String common;
     }
 }
