@@ -1,26 +1,35 @@
 # REST Countries Assessment
 
-Dit Java-project maakt gebruik van de REST Countries API om landeninformatie op te halen en hierop eenvoudige analyses uit te voeren.
+This Java application uses the [REST Countries API](https://restcountries.com) to retrieve and analyze country data, with a focus on population density and geographic borders.
 
-## Functionaliteiten
+---
 
-- Haalt gegevens op over alle landen via een publieke REST API
-- Berekent bevolkingsdichtheid (population / area)
-- Toont de top 10 landen met de hoogste bevolkingsdichtheid
-- Bepaalt het Aziatische land dat het meeste aantal buurlanden heeft buiten Azië
-- Bevat unit tests voor de logica rondom bevolkingsdichtheid
+## Features
 
-## Gebruikte technologieën
+- Fetches real-time data from the REST Countries public API
+- Calculates population density for all countries
+- Displays the top 10 countries by population density
+- Determines the Asian country with the most bordering countries outside Asia
+- Includes logging via Java's built-in logger
+- Unit tests for core logic (e.g., population density calculation)
+
+---
+
+## Technologies Used
 
 - Java 17
 - Maven
-- HttpClient (voor API-aanroep)
-- Jackson (voor JSON-parsing)
-- JUnit 5 (voor unit testing)
+- Java HTTP Client (for API calls)
+- Jackson (for JSON parsing)
+- Lombok (for reducing DTO boilerplate)
+- JUnit 5 (for unit testing)
+- Java Util Logging (`java.util.logging`)
 
-## Uitvoeren
+---
 
-Voor het uitvoeren van het project:
+## Running the Application
 
-```bash
-mvn compile exec:java -Dexec.mainClass="com.markshizzle.restcountries.RestCountriesApplication"
+1. Clone the repository
+   ```bash
+   git clone https://github.com/markshizzle/restcountries-assessment.git
+   cd restcountries-assessment
